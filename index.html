@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyScript Todo App</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <!-- Bulmaの読み込み -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        main {
+            padding: 3rem;
+            text-align: center;
+        }
+    </style>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    <main>
+        <div class="column is-full">
+            <h1 class="title">TODO アプリ</h1>
+        </div>
+        <div class="column is-full">
+            <input id="todo_input" class="input is-link" type="text" placeholder="TODOを追加">
+        </div>
+        <div class="column is-full">
+            <button id="todo_button" class="button is-light" pys-onClick="addTodo">追加</button>
+        </div>
+        <div class="column is-full">
+            <ul id="todo_list"></ul>
+        </div>
+
+        <template id="todo_template">
+            <li class="todo">
+                <label class="panel-block">
+                    <input id="todo_checkbox" type="checkbox" value="">
+                    <span id="todo_text"></span>
+                </label>
+            </li>
+        </template>
+
+    </main>
+    <py-script src="./main.py"></py-script>
+</body>
+</html>
